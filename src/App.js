@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>⚛️🔥💬</h1>
+        <h1>Collabo</h1>
         <SignOut />
       </header>
 
