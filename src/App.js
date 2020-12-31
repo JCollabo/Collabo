@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Collabo</h1>
+        <h1>Collabo?</h1>
         <SignOut />
       </header>
 
@@ -53,8 +53,8 @@ function SignIn() {
 
   return (
     <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Chat for busy people</p>
+      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google!</button>
+      <p>Chat for busy people.</p>
     </>
   )
 
