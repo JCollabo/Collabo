@@ -58,7 +58,7 @@ form {
   height: 10vh;
   position: fixed;
   bottom: 0;
-  background-color: rgb(187, 187, 187);
+  background-color: rgb(255, 0, 0);
   width: 100%;
   max-width: 2500px;
   display: flex;
@@ -67,7 +67,7 @@ form {
 
 form button {
   width: 20%;
-  background-color: #6CB8EE ;      /*sign in?*/
+  background-color: #6CB8EE ;      /*?*/
 }
 
 
