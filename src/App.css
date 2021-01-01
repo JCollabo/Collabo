@@ -67,7 +67,7 @@ form {
 
 form button {
   width: 20%;
-  background-color: #C5DFF2;      /*send button*/
+  background-color: #6CB8EE ;      /*sign in?*/
 }
 
 
@@ -76,16 +76,16 @@ input {                 /*input chat box*/
   width: 100%;
   font-size: 1.5rem;
   background: #6CB8EE;
-  color: white;
+  color: black;
   outline: none;
   border: none;
   padding: 0 10px;
 }
 
 button {
-  background-color: #C5DFF2;            /* ??? */
+  background-color: #C5DFF2;            /* I think to send chats? */
   border: none;
-  color: white;
+  color: black;
   padding: 7px 16px;
   text-align: center;
   text-decoration: none;
@@ -101,7 +101,7 @@ button:disabled {                 /*when no text in box*/
 
 
 .sign-in {
-  color: #282c34;         /*the sign in and out*/
+  color: #282c34;         /*the sign in*/
   background: #6CB8EE;
   max-width: 400px;
   margin: 0 auto;
