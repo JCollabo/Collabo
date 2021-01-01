@@ -54,7 +54,7 @@ main::-webkit-scrollbar-thumb {
   background: #6CB8EE; 
 }
 
-form {                    /*what is this*/
+form {                    /*send button*/
   height: 10vh;
   position: fixed;
   bottom: 0;
@@ -83,7 +83,7 @@ input {                 /*input chat box*/
 }
 
 button {
-  background-color: #C5DFF2;            /* I think to send chats? */
+  background-color: #ff0000;            /* I think to send chats? */
   border: none;
   color: black;
   padding: 7px 16px;
