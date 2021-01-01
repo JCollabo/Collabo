@@ -116,10 +116,10 @@ ul, li {
 }
 
 p {
-  max-width: 500px;         /*texts printed format*/
+  max-width: 500px;                 /*texts printed format*/
   margin-bottom: 6px;
   line-height: 12px;
-  padding: 5px 10px;
+  padding: 1000px 10px;
   border-radius: 0px;
   position: relative;
   color: white;
@@ -147,9 +147,9 @@ p {
 }
 
 img {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 0;
-  margin: 2px 5px;
+  margin: 2px 0px;
 }
 
