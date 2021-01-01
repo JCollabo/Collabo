@@ -67,7 +67,7 @@ form {
 
 form button {
   width: 20%;
-  background-color: #6CB8EE;      /*send button*/
+  background-color: #C5DFF2;      /*send button*/
 }
 
 
@@ -102,7 +102,7 @@ button:disabled {                 /*when no text in box*/
 
 .sign-in {
   color: #282c34;         /*the sign in and out*/
-  background: #C5DFF2;
+  background: #6CB8EE;
   max-width: 400px;
   margin: 0 auto;
 }
