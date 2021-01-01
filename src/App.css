@@ -58,11 +58,11 @@ form {
   height: 10vh;
   position: fixed;
   bottom: 0;
-  background-color: rgb(255, 0, 0);
+  background-color: #C5DFF2;
   width: 100%;
   max-width: 2500px;
   display: flex;
-  font-size: 1.5rem;
+  font-size: 5rem;
 }
 
 form button {
