@@ -83,7 +83,7 @@ input {
 }
 
 button {
-  background-color: #C5DFF2;            /* chat box */
+  background-color: #6CB8EE;            /* chat box */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -118,7 +118,7 @@ ul, li {
 p {
   max-width: 500px;               /*texts printed format*/
   margin-bottom: 6px;
-  line-height: 12px;
+  line-height: 15px;
   padding: 5px 10px;
   border-radius: 0px;
   position: relative;
