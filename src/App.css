@@ -51,7 +51,7 @@ main::-webkit-scrollbar-track {
 }
 
 main::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  background: #89C5EF; 
 }
 
 form {
@@ -67,7 +67,7 @@ form {
 
 form button {
   width: 20%;
-  background-color: rgb(143, 56, 56);
+  background-color: #6CB8EE;      /*send button*/
 }
 
 
@@ -83,7 +83,7 @@ input {
 }
 
 button {
-  background-color: #282c34; /* Green */
+  background-color: #C5DFF2; /* chat box */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -94,7 +94,7 @@ button {
   font-size: 1.25rem;
 }
 
-button:disabled {
+button:disabled {                 /*when no text in box*/
   opacity: 0.5;
   cursor: not-allowed;
 }
