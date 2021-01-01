@@ -58,7 +58,7 @@ form {
   height: 10vh;
   position: fixed;
   bottom: 0;
-  background-color: rgb(24, 23, 23);
+  background-color: rgb(187, 187, 187);
   width: 100%;
   max-width: 728px;
   display: flex;
@@ -83,7 +83,7 @@ input {
 }
 
 button {
-  background-color: #C5DFF2; /* chat box */
+  background-color: #C5DFF2;            /* chat box */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -101,7 +101,7 @@ button:disabled {                 /*when no text in box*/
 
 
 .sign-in {
-  color: #282c34;         /*the sign in button top right*/
+  color: #282c34;         /*the sign in and out*/
   background: #C5DFF2;
   max-width: 400px;
   margin: 0 auto;
@@ -117,9 +117,9 @@ ul, li {
 
 p {
   max-width: 500px;         /*texts printed format*/
-  margin-bottom: 12px;
-  line-height: 24px;
-  padding: 10px 20px;
+  margin-bottom: 6px;
+  line-height: 12px;
+  padding: 5px 10px;
   border-radius: 0px;
   position: relative;
   color: white;
@@ -137,12 +137,12 @@ p {
 }
 
 .sent p {
-  color: white;               /*send and received texts*/
-  background: #0b93f6;
+  color: black;               /*send and received texts*/
+  background: #8ef0b7;
   align-self: flex-end;
 }
 .received p {
-  background: #e5e5ea;
+  background: #5151a3;
   color: black;
 }
 
