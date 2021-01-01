@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Collabo?</h1>
+        <h1>Collabo</h1>
         <SignOut />
       </header>
 
@@ -104,7 +104,7 @@ function ChatRoom() {
 
     <form onSubmit={sendMessage}>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="be helpful!" />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Be Helpful!" />
 
       <button type="submit" disabled={!formValue}>©</button>
 
