@@ -108,21 +108,19 @@ button:disabled {                 /*when no text in box*/
 }
 
 
-
-
 ul, li {
   text-align: left;
   list-style: none;
 }
 
 p {
-  max-width: 500px;               /*texts printed format*/
+  max-width: 500px;               /*what is this*/
   margin-bottom: 6px;
   line-height: 15px;
-  padding: 0px 10px;
+  padding: 5px 10px;
   border-radius: 0px;
   position: relative;
-  color: white;
+  color: rgb(255, 0, 0);
   text-align: center;
 }
 
@@ -138,18 +136,16 @@ p {
 
 .sent p {
   color: black;               /*send and received texts*/
-  background: #b1b1b1;
   align-self: flex-end;
 }
 .received p {
-  background: #b1b1b1;
   color: black;
 }
 
 img {
   width: 30px;
   height: 30px;
-  border-radius: 0;
+  border-radius: 25px;
   margin: 0px 0px;
 }
 
