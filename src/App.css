@@ -21,7 +21,7 @@ body {
   align-items: center;
   justify-content: space-between;
   z-index: 99;
-  padding: 10px;
+  padding: 20px;
   box-sizing: border-box;
 }
 
@@ -67,7 +67,7 @@ form {                    /*send button*/
 
 form button {
   width: 20%;
-  background-color: #ee6c6c ;      /*?*/
+  background-color: #ee6c6c ;      /*what is this*/
 }
 
 
@@ -86,7 +86,7 @@ button {
   background-color: #C5DFF2;            /* sign out */
   border: none;
   color: black;
-  padding: 27px 10px;
+  padding: 27px 0px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
