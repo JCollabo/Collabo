@@ -9,7 +9,7 @@ body {
 }
 
 .App header {
-  background-color: #C5DFF2;    /*top of the screen*/
+  background-color: #6CB8EE;    /*top of the screen*/
   height: 10vh;
   min-height: 50px;
   color: black;
@@ -67,7 +67,7 @@ form {
 
 form button {
   width: 20%;
-  background-color: #6CB8EE;      /*send button*/
+  background-color: #C5DFF2;      /*send button*/
 }
 
 
@@ -116,11 +116,11 @@ ul, li {
 }
 
 p {
-  max-width: 500px;
+  max-width: 500px;         /*texts printed format*/
   margin-bottom: 12px;
   line-height: 24px;
   padding: 10px 20px;
-  border-radius: 25px;
+  border-radius: 0px;
   position: relative;
   color: white;
   text-align: center;
@@ -137,7 +137,7 @@ p {
 }
 
 .sent p {
-  color: white;
+  color: white;               /*send and received texts*/
   background: #0b93f6;
   align-self: flex-end;
 }
