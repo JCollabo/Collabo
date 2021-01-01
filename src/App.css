@@ -116,10 +116,10 @@ ul, li {
 }
 
 p {
-  max-width: 500px;                 /*texts printed format*/
+  max-width: 500px;               /*texts printed format*/
   margin-bottom: 6px;
   line-height: 12px;
-  padding: 5px 1000px;
+  padding: 5px 10px;
   border-radius: 0px;
   position: relative;
   color: white;
@@ -138,11 +138,11 @@ p {
 
 .sent p {
   color: black;               /*send and received texts*/
-  background: #8ef0b7;
+  background: #b1b1b1;
   align-self: flex-end;
 }
 .received p {
-  background: #5151a3;
+  background: #b1b1b1;
   color: black;
 }
 
