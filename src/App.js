@@ -53,7 +53,7 @@ function SignIn() {
 
   return (
     <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google!</button>
+      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
       <p>Chat for busy people.</p>
     </>
   )
