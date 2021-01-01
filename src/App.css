@@ -67,7 +67,7 @@ form {
 
 form button {
   width: 20%;
-  background-color: #C5DFF2;      /*send button*/
+  background-color: #6CB8EE;      /*send button*/
 }
 
 
@@ -109,7 +109,7 @@ button:disabled {                 /*when no text in box*/
 
 
 ul, li {
-  text-align: left;
+  text-align: center;
   list-style: none;
 }
 
