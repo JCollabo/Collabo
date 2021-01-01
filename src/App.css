@@ -86,7 +86,7 @@ button {
   background-color: #C5DFF2;            /* chat box */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 7px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -114,13 +114,13 @@ ul, li {
 }
 
 p {
-  max-width: 500px;               /*what is this*/
+  max-width: 500px;               
   margin-bottom: 6px;
   line-height: 15px;
   padding: 5px 10px;
   border-radius: 0px;
   position: relative;
-  color: rgb(255, 0, 0);
+  color: black; /*where it says chat for busy people*/
   text-align: center;
 }
 
