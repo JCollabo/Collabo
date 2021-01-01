@@ -9,7 +9,7 @@ body {
 }
 
 .App header {
-  background-color: #6CB8ee;    /*top of the screen*/
+  background-color: #C5DFF2;    /*top of the screen*/
   height: 10vh;
   min-height: 50px;
   color: black;
@@ -67,7 +67,7 @@ form {
 
 form button {
   width: 20%;
-  background-color: rgb(56, 56, 143);
+  background-color: rgb(143, 56, 56);
 }
 
 
@@ -102,7 +102,7 @@ button:disabled {
 
 .sign-in {
   color: #282c34;         /*the sign in button top right*/
-  background: #6CB8EE;
+  background: #C5DFF2;
   max-width: 400px;
   margin: 0 auto;
 }
