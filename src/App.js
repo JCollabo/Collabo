@@ -76,7 +76,7 @@ function ChatRoom() {
 
   const [formValue, setFormValue] = useState('');
 
-  const[lumenCounter, setLumenCounter] = 0;
+  const [lumenCounter, setLumenCounter] = useState('');
 
 
   const sendMessage = async (e) => {
@@ -92,7 +92,7 @@ function ChatRoom() {
       lumens: lumenCounter
     })
 
-    setLumenCounter(0);
+    setLumenCounter('');
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
@@ -109,6 +109,7 @@ function ChatRoom() {
     <form onSubmit={sendMessage}>
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="~ Be helpful ~" />
+
 
       <button type="submit" disabled={!formValue}>©</button>
 
