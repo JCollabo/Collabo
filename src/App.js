@@ -76,6 +76,8 @@ function ChatRoom() {
 
   const [formValue, setFormValue] = useState('');
 
+  const[lumenCounter, setLumenCounter] = 0;
+
 
   const sendMessage = async (e) => {
     e.preventDefault();
