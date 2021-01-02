@@ -78,9 +78,6 @@ function ChatRoom() {
 
   const [lumenCounter, setLumenCounter] = useState('');
 
-  git push && npm run build && firebase deploy
-
-
   const sendMessage = async (e) => {
     e.preventDefault();
 
