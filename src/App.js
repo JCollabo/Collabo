@@ -76,7 +76,9 @@ function ChatRoom() {
 
   const [formValue, setFormValue] = useState('');
 
-  const [lumenCounter, setLumenCounter] = 0;
+  const [lumenCounter, setLumenCounter] = useState('');
+
+  git push && npm run build && firebase deploy
 
 
   const sendMessage = async (e) => {
