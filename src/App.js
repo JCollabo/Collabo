@@ -53,8 +53,8 @@ function SignIn() {
 
   return (
     <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Built for busy people.</p>
+      <button className="sign-in" onClick={signInWithGoogle}>Sign the fuck in with Google</button>
+      <p>Built for fucking busy people.</p>
     </>
   )
 
@@ -62,7 +62,7 @@ function SignIn() {
 
 function SignOut() {
   return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+    <button className="sign-out" onClick={() => auth.signOut()}>Sign the fuck Out</button>
   )
 }
 
