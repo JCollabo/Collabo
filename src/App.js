@@ -92,6 +92,7 @@ function ChatRoom() {
       lumens: lumenCounter
     })
 
+    setLumenCounter(0);
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
