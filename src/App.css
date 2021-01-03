@@ -1,5 +1,5 @@
 body {
-  background-color: #C5DFF2;
+  background-color: #ADEFD1FF;
 }
 
 .App {
@@ -9,7 +9,7 @@ body {
 }
 
 .App header {
-  background-color:#6CB8EE;    /*top of the screen*/
+  background-color: #00203FFF;    /*top of the screen*/
   height: 10vh;
   min-height: 50px;
   color: black;
@@ -47,18 +47,18 @@ main::-webkit-scrollbar {
 }
 
 main::-webkit-scrollbar-track {
-  background: #C5DFF2;
+  background: #ADEFD1FF;
 }
 
 main::-webkit-scrollbar-thumb {
-  background: #6CB8EE; 
+  background: #00203FFF; 
 }
 
 form {                    /*send button*/
   height: 10vh;
   position: fixed;
   bottom: 0;
-  background-color: #C5DFF2;
+  background-color: #ADEFD1FF;
   width: 100%;
   max-width: 2500px;
   display: flex;
@@ -67,7 +67,7 @@ form {                    /*send button*/
 
 form button {
   width: 20%;
-  background-color: #C5DFF2 ;      /*C send button*/
+  background-color: #ADEFD1FF ;      /*C send button*/
 }
 
 
@@ -75,18 +75,18 @@ input {                 /*input chat box*/
   line-height: 1;
   width: 100%;
   font-size: 1.5rem;
-  background: #6CB8EE;
-  color: black;
+  background:#00203FFF;
+  color: white;
   outline: none;
   border: none;
   padding: 0 10px;
 }
 
 button {
-  background-color: #C5DFF2;            /* sign out */
+  background-color: #ADEFD1FF;            /* sign out */
   border: none;
   color: black;
-  padding: 27px 10px;
+  padding: 15px 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
