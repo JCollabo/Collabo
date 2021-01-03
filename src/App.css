@@ -1,5 +1,5 @@
 body {
-  background-color: #C5DFF2;
+  background-color: #ADEFD1FF;
 }
 
 .App {
@@ -9,10 +9,10 @@ body {
 }
 
 .App header {
-  background-color:#6CB8EE;    /*top of the screen*/
+  background-color: #00203FFF;    /*top of the screen*/
   height: 10vh;
   min-height: 50px;
-  color: black;
+  color: white;
   position: fixed;
   width: 100%;
   max-width: 2500px;
@@ -23,6 +23,7 @@ body {
   z-index: 99;
   padding: 10px;
   box-sizing: border-box;
+  font-style: italic
 }
 
 .App section {
@@ -47,18 +48,18 @@ main::-webkit-scrollbar {
 }
 
 main::-webkit-scrollbar-track {
-  background: #C5DFF2;
+  background: #ADEFD1FF;
 }
 
 main::-webkit-scrollbar-thumb {
-  background: #6CB8EE; 
+  background: #00203FFF; 
 }
 
 form {                    /*send button*/
   height: 10vh;
   position: fixed;
   bottom: 0;
-  background-color: #C5DFF2;
+  background-color: #ADEFD1FF;
   width: 100%;
   max-width: 2500px;
   display: flex;
@@ -67,7 +68,7 @@ form {                    /*send button*/
 
 form button {
   width: 20%;
-  background-color: #C5DFF2 ;      /*C send button*/
+  background-color: #ADEFD1FF ;      /*C send button*/
 }
 
 
@@ -75,18 +76,18 @@ input {                 /*input chat box*/
   line-height: 1;
   width: 100%;
   font-size: 1.5rem;
-  background: #6CB8EE;
-  color: black;
+  background:#00203FFF;
+  color: white;
   outline: none;
   border: none;
   padding: 0 10px;
 }
 
 button {
-  background-color: #C5DFF2;            /* sign out */
+  background-color: #ADEFD1FF;            /* sign out */
   border: none;
   color: black;
-  padding: 27px 10px;
+  padding: 15px 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -95,14 +96,14 @@ button {
 }
 
 button:disabled {                 /*when no text in box*/
-  opacity: 0.75;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
 
 .sign-in {
-  color: #282c34;         /*the sign in*/
-  background: #6CB8EE;
+  color: white;         /*the sign in*/
+  background: #00203FFF;
   max-width: 400px;
   margin: 0 auto;
 }
@@ -115,13 +116,13 @@ ul, li {
 
 p {
   max-width: 2500px;               
-  margin-bottom: 6px;
-  line-height: 15px;
+  margin-bottom: 8px;
+  line-height: 20px;
   padding: 5px 10px;
   border-radius: 0px;
   position: relative;
-  color: black; /*where it says chat for busy people*/
-  text-align: center;
+  color: black; 
+ 
 }
 
 .message {
@@ -137,9 +138,11 @@ p {
 .sent p {
   color: black;               /*send and received texts*/
   align-self: flex-end;
+  text-align: right;
 }
 .received p {
   color: black;
+  text-align: left;
 }
 
 img {

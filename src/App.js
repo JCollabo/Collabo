@@ -53,8 +53,8 @@ function SignIn() {
 
   return (
     <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign the fuck in with Google</button>
-      <p>Built for fucking busy people.</p>
+      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
+      <p>Built for busy people.</p>
     </>
   )
 
@@ -62,7 +62,7 @@ function SignIn() {
 
 function SignOut() {
   return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign the fuck Out</button>
+    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
 
@@ -76,6 +76,7 @@ function ChatRoom() {
 
   const [formValue, setFormValue] = useState('');
 
+  const [lumenCounter, setLumenCounter] = useState('');
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -90,6 +91,7 @@ function ChatRoom() {
       lumens: lumenCounter
     })
 
+    setLumenCounter('');
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
@@ -122,8 +124,9 @@ function ChatMessage(props) {
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-      <p>{text}</p>
       <p>{lumens}</p>
+      <p>{text}</p>
+
     </div>
   </>)
 }
