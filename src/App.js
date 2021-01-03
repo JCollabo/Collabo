@@ -32,7 +32,7 @@ class MyComponent extends React.PureComponent {
     return (
       <>
         <Helmet>
-          <title>{ Collabo }</title>
+          <title>{ "Collabo" }</title>
         </Helmet>
         ...
       </>
@@ -103,10 +103,10 @@ function ChatRoom() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL,
-      lumens: lumenCounter
+      // lumens: lumenCounter
     })
 
-    setLumenCounter('');
+    // setLumenCounter('');
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
