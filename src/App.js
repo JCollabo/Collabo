@@ -8,7 +8,7 @@ import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-
+import { Helmet } from 'react-helmet'
 
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
@@ -21,7 +21,12 @@ firebase.initializeApp({
     measurementId: "G-S17408XZXB"
 })
 
-const TITLE = 'Collabo'
+const auth = firebase.auth();
+const firestore = firebase.firestore();
+const analytics = firebase.analytics();
+
+const TITLE = 'My Page Title'
+
 class MyComponent extends React.PureComponent {
   render () {
     return (
@@ -32,10 +37,8 @@ class MyComponent extends React.PureComponent {
         ...
       </>
     )
-
-const auth = firebase.auth();
-const firestore = firebase.firestore();
-const analytics = firebase.analytics();
+  }
+}
 
 
 function App() {
@@ -88,7 +91,7 @@ function ChatRoom() {
 
   const [formValue, setFormValue] = useState('');
 
-  const [lumenCounter, setLumenCounter] = useState('');
+  // const [lumenCounter, setLumenCounter] = useState('');
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -141,8 +144,8 @@ function ChatMessage(props) {
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
 
       {/* <button onClick={(lumenCounter) => setLumenCounter(0)}>Give lumen</button>
-      <p>{lumens}</p>
-      <p>{text}</p> */}
+      <p>{lumens}</p> */}
+      <p>{text}</p>
 
     </div>
   </>)
