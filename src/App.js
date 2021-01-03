@@ -66,7 +66,6 @@ function SignOut() {
   )
 }
 
-
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
@@ -105,6 +104,10 @@ function ChatRoom() {
 
     </main>
 
+    {/* <button type="submit" disabled= {!lumenCounter} THIS IS WHERE JUSTIN HAS TO MAKE BUTTON TO MAKE LUMEN UPDATE */}
+
+    <button onClick={setFormValue}>Give lumen</button>
+
     <form onSubmit={sendMessage}>
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="~ Be helpful ~" />
@@ -124,13 +127,6 @@ function ChatMessage(props) {
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-
-
-      <input value={lumenCounter} onChange={(lumens) => setLumenCounter(lumens+1)} placeholder="(lumens)" />
-
-      <button type="lumens" disabled={!lumenCounter}>??</button>
-
-
 
       <p>{lumens}</p>
       <p>{text}</p>
