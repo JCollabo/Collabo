@@ -106,11 +106,10 @@ function ChatRoom() {
 
     {/* <button type="submit" disabled= {!lumenCounter} THIS IS WHERE JUSTIN HAS TO MAKE BUTTON TO MAKE LUMEN UPDATE */}
 
-    <button onClick={setFormValue}>Give lumen</button>
 
     <form onSubmit={sendMessage}>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="~ Be helpful ~" />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="/ Be helpful /" />
 
       <button type="submit" disabled={!formValue}>https://www.google.com/imgres?imgurl=https%3A%2F%2Fhackr.io%2Ftutorials%2Fc%2Flogo-c.svg%3Fver%3D1553674176&imgrefurl=https%3A%2F%2Fhackr.io%2Ftutorials%2Flearn-c&tbnid=RuT3Qh5xTu7gOM&vet=12ahUKEwjciNDIx_7tAhXRC98KHdHLCDgQMygHegUIARCVAQ..i&docid=K29wdRhCC_tJoM&w=800&h=800&q=%20%20c&ved=2ahUKEwjciNDIx_7tAhXRC98KHdHLCDgQMygHegUIARCVAQ</button>
 
@@ -128,6 +127,7 @@ function ChatMessage(props) {
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
 
+      <button onClick={setLumenCounter}>Give lumen</button>
       <p>{lumens}</p>
       <p>{text}</p>
 
