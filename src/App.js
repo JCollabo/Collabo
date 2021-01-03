@@ -146,12 +146,12 @@ function ChatMessage(props) {
           Lumens
         </button>
 
-      </div>
+      {/* </div>
 
       <p>{lumens}</p>
       <p>{text}</p>
 
-    </div>
+    </div> */}
   </>)
 }
 
