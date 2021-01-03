@@ -101,7 +101,7 @@ button:disabled {                 /*when no text in box*/
 
 
 .sign-in {
-  color: #282c34;         /*the sign in*/
+  color: white;         /*the sign in*/
   background: #00203FFF;
   max-width: 400px;
   margin: 0 auto;
