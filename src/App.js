@@ -140,13 +140,13 @@ function ChatMessage(props) {
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
 
-      {/* <div>
+      <div>
 
         <button>
-          L
+        💡
         </button>
 
-      </div> */}
+      </div>
 
       <p>{lumens}</p>
       <p>{text}</p>
