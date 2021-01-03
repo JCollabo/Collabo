@@ -136,13 +136,18 @@ function ChatMessage(props) {
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
+  function addLumen(){
+        lumens = lumens +1
+  }
+  
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
 
+      
       <div>
 
-        <button>
+        <button onClick={addLumen}>
         💡
         </button>
 
