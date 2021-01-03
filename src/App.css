@@ -121,7 +121,7 @@ p {
   border-radius: 0px;
   position: relative;
   color: black; 
-  text-align: center;
+ 
 }
 
 .message {
@@ -137,9 +137,11 @@ p {
 .sent p {
   color: black;               /*send and received texts*/
   align-self: flex-end;
+  text-align: right;
 }
 .received p {
   color: black;
+  text-align: left;
 }
 
 img {
