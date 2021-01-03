@@ -1,6 +1,19 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
 
+const TITLE = 'Collabo'
+
+class MyComponent extends React.PureComponent {
+  render () {
+    return (
+      <>
+        <Helmet>
+          <title>{ Collabo }</title>
+        </Helmet>
+        ...
+      </>
+    )
+
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
@@ -75,7 +88,7 @@ function ChatRoom() {
 
   const [formValue, setFormValue] = useState('');
 
-  const [lumenCounter, setLumenCounter] = useState(0);
+  const [lumenCounter, setLumenCounter] = useState('');
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -127,9 +140,9 @@ function ChatMessage(props) {
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
 
-      <button onClick={(lumenCounter) => setLumenCounter(0)}>Give lumen</button>
+      {/* <button onClick={(lumenCounter) => setLumenCounter(0)}>Give lumen</button>
       <p>{lumens}</p>
-      <p>{text}</p>
+      <p>{text}</p> */}
 
     </div>
   </>)
