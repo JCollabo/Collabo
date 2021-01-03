@@ -95,7 +95,7 @@ button {
 }
 
 button:disabled {                 /*when no text in box*/
-  opacity: 0.75;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
