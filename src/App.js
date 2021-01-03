@@ -124,6 +124,14 @@ function ChatMessage(props) {
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+
+
+      <input value={lumenCounter} onChange={(lumens) => setLumenCounter(lumens+1)} placeholder="(lumens)" />
+
+      <button type="lumens" disabled={!lumenCounter}>??</button>
+
+
+
       <p>{lumens}</p>
       <p>{text}</p>
 
