@@ -30,7 +30,7 @@ const TITLE = 'My Page Title'
 class MyComponent extends React.PureComponent {
   render () {
     return (
-      <>
+      <>                                
         <Helmet>
           <title>{ "Collabo" }</title>
         </Helmet>
@@ -39,7 +39,6 @@ class MyComponent extends React.PureComponent {
     )
   }
 }
-
 
 function App() {
 
@@ -85,13 +84,14 @@ function SignOut() {
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
+  const lumensRef = firestore.collection('lumens')
   const query = messagesRef.orderBy('createdAt').limit(25);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
 
-  // const [lumenCounter, setLumenCounter] = useState('');
+  const [lumenCounter, setLumenCounter] = useState('');
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -103,10 +103,10 @@ function ChatRoom() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL,
-      // lumens: lumenCounter
+      lumens: lumenCounter
     })
 
-    // setLumenCounter('');
+    setLumenCounter('');
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
@@ -119,9 +119,6 @@ function ChatRoom() {
       <span ref={dummy}></span>
 
     </main>
-
-    {/* <button type="submit" disabled= {!lumenCounter} THIS IS WHERE JUSTIN HAS TO MAKE BUTTON TO MAKE LUMEN UPDATE */}
-
 
     <form onSubmit={sendMessage}>
 
@@ -143,8 +140,11 @@ function ChatMessage(props) {
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
 
-      {/* <button onClick={(lumenCounter) => setLumenCounter(0)}>Give lumen</button>
-      <p>{lumens}</p> */}
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="/ Be helpful /" />
+
+      <button type="submit" disabled={!formValue}>https://www.google.com/imgres?imgurl=https%3A%2F%2Fhackr.io%2Ftutorials%2Fc%2Flogo-c.svg%3Fver%3D1553674176&imgrefurl=https%3A%2F%2Fhackr.io%2Ftutorials%2Flearn-c&tbnid=RuT3Qh5xTu7gOM&vet=12ahUKEwjciNDIx_7tAhXRC98KHdHLCDgQMygHegUIARCVAQ..i&docid=K29wdRhCC_tJoM&w=800&h=800&q=%20%20c&ved=2ahUKEwjciNDIx_7tAhXRC98KHdHLCDgQMygHegUIARCVAQ</button>
+
+      <p>{lumens}</p>
       <p>{text}</p>
 
     </div>
