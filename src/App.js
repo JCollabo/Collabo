@@ -1,19 +1,6 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
 
-const TITLE = 'Collabo'
-
-class MyComponent extends React.PureComponent {
-  render () {
-    return (
-      <>
-        <Helmet>
-          <title>{ Collabo }</title>
-        </Helmet>
-        ...
-      </>
-    )
-
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
@@ -21,6 +8,7 @@ import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+
 
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
@@ -32,6 +20,18 @@ firebase.initializeApp({
     appId: "1:255596477659:web:78b061c06377cceaf220fe",
     measurementId: "G-S17408XZXB"
 })
+
+const TITLE = 'Collabo'
+class MyComponent extends React.PureComponent {
+  render () {
+    return (
+      <>
+        <Helmet>
+          <title>{ Collabo }</title>
+        </Helmet>
+        ...
+      </>
+    )
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
