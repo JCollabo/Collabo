@@ -83,7 +83,8 @@ function SignOut() {
 
 function ChatRoom() {
   const dummy = useRef();
-
+  const messagesRef = firestore.collection('messages');
+  const lumensRef = firestore.collection('lumens')
   const query = messagesRef.orderBy('createdAt').limit(2000);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
@@ -105,7 +106,7 @@ function ChatRoom() {
       lumens: lumenCounter
     })
 
-    setLumenCounter('');                                                                                             /*setLumenCounter*/
+    setLumenCounter(0);                                                                                             /*setLumenCounter*/
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
