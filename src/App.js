@@ -125,7 +125,7 @@ function ChatRoom() {
 
     <form onSubmit={sendMessage}>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="/ Be helpful /" />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder=" Be helpful " />
 
       <button type="submit" disabled={!formValue}> <img src={collaboC} alt="Collabo"/> </button>
 
@@ -146,7 +146,7 @@ function ChatMessage(props) {
       
       <div className = "lumens">
 
-        <button className="lumens">
+        <button onClick  className="lumens">
         💡
         </button>
 
