@@ -127,7 +127,7 @@ function ChatRoom() {
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="/ Be helpful /" />
 
-      <button type="submit" disabled={!formValue}> return <img src={collaboC} alt="Collabo"/> </button>
+      <button type="submit" disabled={!formValue}> <img src={collaboC} alt="Collabo"/> </button>
 
     </form>
   </>)
