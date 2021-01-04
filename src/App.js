@@ -10,6 +10,9 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { Helmet } from 'react-helmet'
 
+import collaboC from './CollaboC.png'
+
+
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
     authDomain: "collabo-chat.firebaseapp.com",
@@ -124,7 +127,7 @@ function ChatRoom() {
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="/ Be helpful /" />
 
-      <button type="submit" disabled={!formValue}>C</button>
+      <button type="submit" disabled={!formValue}> return <img src={} alt="Collabo"/> </button>
 
     </form>
   </>)
