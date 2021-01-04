@@ -36,7 +36,7 @@ body {
 
 main {
   padding: 10px;
-  height: 40vh;
+  height: 80vh;                   /*this value here will compress chat part of screen to half but centered*/
   margin: 10vh 0 10vh;
   overflow-y: scroll;
   display: flex;
