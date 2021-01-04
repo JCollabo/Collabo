@@ -108,6 +108,10 @@ button:disabled {                 /*when no text in box*/
   margin: 0 auto;
 }
 
+.lumens {
+  background:white
+}
+
 
 ul, li {
   text-align: center;

@@ -91,7 +91,7 @@ function ChatRoom() {
 
   const [formValue, setFormValue] = useState('');
 
-  const [lumenCounter, setLumenCounter] = useState(0);
+  const [lumenCounter, setLumenCounter] = useState('');
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -106,7 +106,7 @@ function ChatRoom() {
       lumens: lumenCounter
     })
 
-    setLumenCounter('');
+    setLumenCounter(0);
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
@@ -135,19 +135,15 @@ function ChatMessage(props) {
   const { text, uid, photoURL, lumens } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
-
-  function addLumen(){
-        lumens = lumens +1
-  }
   
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
 
       
-      <div>
+      <div className = "lumens">
 
-        <button onClick={addLumen}>
+        <button className="lumens" onClick={addLumen}>
         💡
         </button>
 
