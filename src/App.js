@@ -35,7 +35,7 @@ class MyComponent extends React.PureComponent {
     return (
       <>                                
         <Helmet>
-          <title>{ "-Collabo-" }</title>
+          <title>{ "-Collabo1-" }</title>
         </Helmet>
         ...
       </>
