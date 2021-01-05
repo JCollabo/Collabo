@@ -35,16 +35,6 @@ const analytics = firebase.analytics();
 
 const TITLE = 'My Page Title'
 
-const Post = ({ post }) => {
-  return (
-    <HStack key={post.id} w="100%" alignItems="flex-start">
-      <VoteButtons post={post} />
-      ...
-    </HStack>
-  );
-};
-
-
 class MyComponent extends React.PureComponent {
   render () {
     return (
