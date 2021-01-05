@@ -12,6 +12,9 @@ import { Helmet } from 'react-helmet'
 
 import collaboC from './CollaboC.png'
 
+import { Container, Flex, Spinner, VStack } from "@chakra-ui/core";
+import Message from "./components/message";
+import db from "./lib/firebase";
 
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
@@ -135,19 +138,24 @@ return (<>
 </>)
 }
 
-function ChatMessage(props) {
-  const { text, uid, photoURL, lumens } = props.message;
+useEffect(() => {
+  // Hook to handle the real-time updating of posts whenever there is a
+  // change in the datastore (https://firebase.google.com/docs/firestore/query-data/listen#view_changes_between_snapshots)
 
-  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+  db.collection("messages")
+    .orderBy("createdAt", "desc")
+    .onSnapshot((querySnapshot) => {
+      const _messages = [];
 
-  return (<>
-    <div className={`message ${messageClass}`}>
-      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-      <p>{lumens}</p>
-      <p>{text}</p>
-    </div>
-  </>)
-}
+      querySnapshot.forEach((doc) => {
+        _messages.push({
+          id: doc.id,
+          ...doc.data(),
+        });
+      });
+      setMessages(_messages);
+    });
+}, []);
 
 
 export default App;
