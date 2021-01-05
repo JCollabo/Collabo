@@ -15,7 +15,7 @@ const LumenButtons = ({ message }) => {
     }
 
     await db.collection("messages").doc(post.id).set({
-      title: post.title,
+      text: formValue,
       lumens,
       createdAt: post.createdAt,
       updatedAt: date.toUTCString(),

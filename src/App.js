@@ -109,30 +109,45 @@ function ChatRoom() {
       uid,
       photoURL,
       lumens: 0,
-      updatedAt: date.toUTCString(),
+      updatedAt: firebase.firestore.FieldValue.serverTimestamp()
     })
                                                                             
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
 
+return (<>
+  <main>
+
+    {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
+
+    <span ref={dummy}></span>
+
+  </main>
+
+  <form onSubmit={sendMessage}>
+
+    <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder=" Be helpful " />
+
+    <button type="submit" disabled={!formValue}> <img src={collaboC} alt="Collabo"/> </button>
+
+  </form>
+</>)
+}
+
+function ChatMessage(props) {
+  const { text, uid, photoURL, lumens } = props.message;
+
+  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+
   return (<>
-    <main>
-
-      {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
-
-      <span ref={dummy}></span>
-
-    </main>
-
-    <form onSubmit={sendMessage}>
-
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder=" Be helpful " />
-
-      <button type="submit" disabled={!formValue}> <img src={collaboC} alt="Collabo"/> </button>
-
-    </form>
+    <div className={`message ${messageClass}`}>
+      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+      <p>{lumens}</p>
+      <p>{text}</p>
+    </div>
   </>)
+}
 }
 
 
