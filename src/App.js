@@ -148,7 +148,6 @@ function ChatMessage(props) {
     </div>
   </>)
 }
-}
 
 
 export default App;
