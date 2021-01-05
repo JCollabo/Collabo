@@ -1,4 +1,4 @@
-import LumenButtons from "./vote-buttons";
+import LumenButtons from "./lumenbutton";
 
 const Post = ({ post }) => {
   return (
