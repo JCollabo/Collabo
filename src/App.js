@@ -27,7 +27,6 @@ firebase.initializeApp({
 document.addEventListener("DOMContentLoaded", event => {
   const app = firebase.app();
   const db = firebase.firestore();
-  const myLumens = db.collection('messages').doc('lumens')
 })
 
 const auth = firebase.auth();
@@ -103,14 +102,11 @@ function SignOut() {
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
-  const lumensRef = firestore.collection('lumens')
   const query = messagesRef.orderBy('createdAt').limit(2000);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
-
-  const [lumenCounter, setLumenCounter] = useState('');
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -122,10 +118,10 @@ function ChatRoom() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL,
-      lumens: lumenCounter
+      lumens: 0,
+      updatedAt: date.toUTCString(),
     })
-
-    setLumenCounter(0);                                                                                             /*setLumenCounter*/
+                                                                            
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
@@ -148,56 +144,6 @@ function ChatRoom() {
     </form>
   </>)
 }
-
-import VoteButtons from "./vote-buttons";
-import { IconButton, Text, VStack } from "@chakra-ui/core";
-import { FiArrowUp } from "react-icons/fi";
-import db from "../lib/firebase";
-
-const VoteButtons = ({ message }) => {
-  const handleClick = async (type) => {
-    // Do calculation to save the vote.
-    let lumens= message.lumens;
-
-    const date = new Date();
-
-    if (type === "upvote") {
-      lumens = lumens + 1;
-    } 
-    await db.collection("messages").doc(post.id).set({
-      title: post.title,
-      lumens,
-      createdAt: post.createdAt,
-      updatedAt: date.toUTCString(),
-    });
-  };
-
-  return (
-    <>
-      <VStack>
-        <IconButton
-          size="lg"
-          colorScheme="purple"
-          aria-label="Lumen"
-          icon={<FiArrowUp />}
-          onClick={() => handleClick("lumen")}
-        />
-        <Text bg="gray.100" rounded="md" w="100%" p={1}>
-          {post.upVotesCount}
-        </Text>
-      </VStack>
-      <VStack>
-        <IconButton
-          size="lg"
-          colorScheme="yellow"
-        />
-        <Text bg="gray.100" rounded="md" w="100%" p={1}>
-          {post.downVotesCount}
-        </Text>
-      </VStack>
-    </>
-  );
-};
 
 
 export default App;
