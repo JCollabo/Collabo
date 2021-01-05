@@ -12,11 +12,6 @@ import { Helmet } from 'react-helmet'
 
 import collaboC from './CollaboC.png'
 
-import VoteButtons from "./vote-buttons";
-import { IconButton, Text, VStack } from "@chakra-ui/core";
-import { FiArrowUp } from "react-icons/fi";
-import db from "../lib/firebase";
-
 
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
@@ -153,6 +148,11 @@ function ChatRoom() {
     </form>
   </>)
 }
+
+import VoteButtons from "./vote-buttons";
+import { IconButton, Text, VStack } from "@chakra-ui/core";
+import { FiArrowUp } from "react-icons/fi";
+import db from "../lib/firebase";
 
 const VoteButtons = ({ message }) => {
   const handleClick = async (type) => {
