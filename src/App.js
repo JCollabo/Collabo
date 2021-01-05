@@ -14,7 +14,6 @@ import collaboC from './CollaboC.png'
 
 import { Container, Flex, Spinner, VStack } from "@chakra-ui/core";
 import Message from "./components/message";
-import db from "./lib/firebase";
 
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
