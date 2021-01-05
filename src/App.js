@@ -14,8 +14,7 @@ import collaboC from './CollaboC.png'
 
 import VoteButtons from "./vote-buttons";
 import { IconButton, Text, VStack } from "@chakra-ui/core";
-import React, { useState } from "react";
-import { FiArrowDown, FiArrowUp } from "react-icons/fi";
+import { FiArrowUp } from "react-icons/fi";
 import db from "../lib/firebase";
 
 
