@@ -11,6 +11,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { Helmet } from 'react-helmet'
 
 import collaboC from './CollaboC.png'
+const db = firebase.firestore();
 
 
 firebase.initializeApp({
@@ -144,7 +145,7 @@ function giveLumen(p){
 
   const lumenCount = db.collection('messages').doc.this;
 
-  const res = await lumenCount.set({
+  lumenCount.set({
     lumens: 100
   }, { merge: true });
 }
