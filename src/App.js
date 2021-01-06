@@ -141,9 +141,7 @@ function ChatRoom() {
 }
 
 function giveLumen(p){
-  const db = firebase.firestore;
-  const messages = db.collection('messages').doc(this)
-  messages.update({lumenCount: lumenCount+1})
+  <input value={lumens} onChange={(p) => setLumenCounter(p.target.value)} placeholder=" 0 " />
 }
 
 function ChatMessage(props) {
