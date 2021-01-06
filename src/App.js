@@ -12,6 +12,7 @@ import { Helmet } from 'react-helmet'
 
 import collaboC from './CollaboC.png'
 
+
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
     authDomain: "collabo-chat.firebaseapp.com",
@@ -26,6 +27,7 @@ firebase.initializeApp({
 document.addEventListener("DOMContentLoaded", event => {
   const app = firebase.app();
   const db = firebase.firestore();
+  const myLumens = db.collection('messages').doc('lumens')
 })
 
 const auth = firebase.auth();
@@ -91,11 +93,14 @@ function SignOut() {
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
+  const lumensRef = firestore.collection('lumens')
   const query = messagesRef.orderBy('createdAt').limit(2000);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
+
+  const [lumenCounter, setLumenCounter] = useState('');
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -107,30 +112,58 @@ function ChatRoom() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL,
-      lumens: 0,
-      updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+      lumens: lumenCounter
     })
-                                                                            
+
+    setLumenCounter(0);                                                                                             /*setLumenCounter*/
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
 
-return (<>
-  <main>
+  return (<>
+    <main>
 
-    {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
+      {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
 
-    <span ref={dummy}></span>
+      <span ref={dummy}></span>
 
-  </main>
+    </main>
 
-  <form onSubmit={sendMessage}>
+    <form onSubmit={sendMessage}>
 
-    <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder=" Be helpful " />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder=" Be helpful " />
 
-    <button type="submit" disabled={!formValue}> <img src={collaboC} alt="Collabo"/> </button>
+      <button type="submit" disabled={!formValue}> <img src={collaboC} alt="Collabo"/> </button>
 
-  </form>
-</>)
+    </form>
+  </>)
 }
+
+
+function ChatMessage(props) {
+  const { text, uid, photoURL, lumens } = props.message;
+
+  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+  
+  return (<>
+    <div className={`message ${messageClass}`}>
+      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+
+      
+      <div className = "lumens">
+
+        <button onClick  className="lumens">
+        💡
+        </button>
+
+      </div>
+
+      <p>{lumens}</p>
+      <p>{text}</p>
+
+    </div>
+  </>)
+}
+
+
 export default App;
