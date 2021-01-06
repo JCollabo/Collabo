@@ -41,7 +41,7 @@ class MyComponent extends React.PureComponent {
     return (
       <>                                
         <Helmet>
-          <title>{ "-Collabo1-" }</title>
+          <title>{ "Collabo1" }</title>
         </Helmet>
         ...
       </>
@@ -91,6 +91,7 @@ function SignOut() {
 }
 
 function ChatRoom() {
+
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
   const lumensRef = firestore.collection('lumens')
@@ -115,7 +116,7 @@ function ChatRoom() {
       lumens: lumenCounter
     })
 
-    setLumenCounter(0);                                                                                             /*setLumenCounter*/
+    setLumenCounter('');                                                                                             /*setLumenCounter*/
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
@@ -139,6 +140,11 @@ function ChatRoom() {
   </>)
 }
 
+function giveLumen(p){
+  const db = firebase.firestore;
+  const messages = db.collection('messages').doc(this)
+  messages.update({lumens = lumens+1})
+}
 
 function ChatMessage(props) {
   const { text, uid, photoURL, lumens } = props.message;
@@ -152,7 +158,7 @@ function ChatMessage(props) {
       
       <div className = "lumens">
 
-        <button onClick  className="lumens">
+        <button onClick= {giveLumen()} className="lumens">
         💡
         </button>
 
