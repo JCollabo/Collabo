@@ -12,9 +12,6 @@ import { Helmet } from 'react-helmet'
 
 import collaboC from './CollaboC.png'
 
-import { Container, Flex, Spinner, VStack } from "@chakra-ui/core";
-import Message from "./components/message";
-
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
     authDomain: "collabo-chat.firebaseapp.com",
@@ -136,25 +133,4 @@ return (<>
   </form>
 </>)
 }
-
-useEffect(() => {
-  // Hook to handle the real-time updating of posts whenever there is a
-  // change in the datastore (https://firebase.google.com/docs/firestore/query-data/listen#view_changes_between_snapshots)
-
-  db.collection("messages")
-    .orderBy("createdAt", "desc")
-    .onSnapshot((querySnapshot) => {
-      const _messages = [];
-
-      querySnapshot.forEach((doc) => {
-        _messages.push({
-          id: doc.id,
-          ...doc.data(),
-        });
-      });
-      setMessages(_messages);
-    });
-}, []);
-
-
 export default App;
