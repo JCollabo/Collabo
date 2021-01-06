@@ -7,7 +7,7 @@ const Message = ({ Message }) => {
     <HStack key={Message.id} w="100%" alignItems="flex-start">
       <VoteButtons Message={Message} />
       <Box bg="gray.100" p={4} rounded="md" w="100%">
-        <Text>{Message.title}</Text>
+        <Text>{Message.text}</Text>
       </Box>
     </HStack>
   );

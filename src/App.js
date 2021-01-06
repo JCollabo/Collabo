@@ -13,8 +13,6 @@ import { Helmet } from 'react-helmet'
 import collaboC from './CollaboC.png'
 
 import { Container, Flex, Spinner, VStack } from "@chakra-ui/core";
-import Post from "./components/post";
-
 
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
@@ -36,14 +34,14 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
-const TITLE = 'My Page Title'
+const TITLE = 'Collabo'
 
 class MyComponent extends React.PureComponent {
   render () {
     return (
       <>                                
         <Helmet>
-          <title>{ "-Collabo1-" }</title>
+          <title>{ "Collabo" }</title>
         </Helmet>
         ...
       </>
@@ -96,7 +94,7 @@ function ChatRoom() {
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(2000);
 
-  const [messages] = useCollectionData(query, { idField: 'id' });
+  const [messages, setmessages] = useState([]);
 
   const [formValue, setFormValue] = useState('');
   const sendMessage = async (e) => {
@@ -109,7 +107,7 @@ function ChatRoom() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL,
-      lumens: lumenCounter
+      upVotes: upVotesCount
     })
                                                                                 
     setFormValue('');
