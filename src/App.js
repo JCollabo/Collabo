@@ -116,7 +116,7 @@ function ChatRoom() {
       lumens: lumenCount
     })
 
-    setLumenCounter('');                                                                                             /*setLumenCounter*/
+    setLumenCounter(0);                                                                                             /*setLumenCounter*/
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
@@ -141,10 +141,9 @@ function ChatRoom() {
 }
 
 function giveLumen(p){
-  lumenCount = 0;
   const db = firebase.firestore;
   const messages = db.collection('messages').doc(this)
-  messages.update({lumenCount: lumenCount +1})
+  messages.update({setLumenCounter: lumenCount +1})
 }
 
 function ChatMessage(props) {
