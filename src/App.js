@@ -162,7 +162,7 @@ function ChatMessage(props) {
       
       <div className = "lumens">
 
-        <button onClick= {giveLumen()} className="lumens">
+        <button onClick= {giveLumen} className="lumens">
         💡
         </button>
 
