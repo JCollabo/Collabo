@@ -114,6 +114,26 @@ function ChatRoom() {
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
 
+  const [messages, setMessages] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Hook to handle the initial fetching of messages
+
+    firebase.collection("messages")
+      .orderBy("createdAt", "desc")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        setMessages(data);
+        setLoading(false);
+      });
+  }, []);
+
   useEffect(() => {
     // Hook to handle the real-time updating of messages whenever there is a
     // change in the datastore (https://firebase.google.com/docs/firestore/query-data/listen#view_changes_between_snapshots)
@@ -123,7 +143,7 @@ function ChatRoom() {
       .onSnapshot((querySnapshot) => {
         const _messages = [];
 
-        querySnapshot.forEach((doc) => {
+        querySnapshot.forEach((doc) => {                  /*LOO AT THIS CLOSER */
           _messages.push({
             id: doc.id,
             ...doc.data(),
@@ -133,7 +153,7 @@ function ChatRoom() {
         setmessages(_messages);
       });
   }, []);
-
+  
   return (<>
     <main>
 
