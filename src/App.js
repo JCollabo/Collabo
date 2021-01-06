@@ -12,7 +12,6 @@ import { Helmet } from 'react-helmet'
 
 import collaboC from './CollaboC.png'
 
-import { Container, Flex, Spinner, VStack } from "@chakra-ui/core";
 
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
@@ -28,20 +27,21 @@ firebase.initializeApp({
 document.addEventListener("DOMContentLoaded", event => {
   const app = firebase.app();
   const db = firebase.firestore();
+  const myLumens = db.collection('messages').doc('lumens')
 })
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
-const TITLE = 'Collabo'
+const TITLE = 'My Page Title'
 
 class MyComponent extends React.PureComponent {
   render () {
     return (
       <>                                
         <Helmet>
-          <title>{ "Collabo" }</title>
+          <title>{ "-Collabo1-" }</title>
         </Helmet>
         ...
       </>
@@ -59,6 +59,7 @@ function App() {
         <h1>Collabo</h1>
         <SignOut />
       </header>
+
       <section>
         {user ? <ChatRoom /> : <SignIn />}
       </section>
@@ -92,11 +93,15 @@ function SignOut() {
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
+  const lumensRef = firestore.collection('lumens')
   const query = messagesRef.orderBy('createdAt').limit(2000);
 
-  const [messages, setmessages] = useState([]);
+  const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
+
+  const [lumenCounter, setLumenCounter] = useState('');
+
   const sendMessage = async (e) => {
     e.preventDefault();
 
@@ -107,53 +112,14 @@ function ChatRoom() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL,
-      upVotes: upVotesCount
+      lumens: lumenCounter
     })
-                                                                                
+
+    setLumenCounter(0);                                                                                             /*setLumenCounter*/
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
 
-  const [messages, setMessages] = useState([]);
-  const [isLoading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Hook to handle the initial fetching of messages
-
-    firebase.collection("messages")
-      .orderBy("createdAt", "desc")
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-
-        setMessages(data);
-        setLoading(false);
-      });
-  }, []);
-
-  useEffect(() => {
-    // Hook to handle the real-time updating of messages whenever there is a
-    // change in the datastore (https://firebase.google.com/docs/firestore/query-data/listen#view_changes_between_snapshots)
-
-    db.collection("messages")
-      .orderBy("createdAt", "desc")
-      .onSnapshot((querySnapshot) => {
-        const _messages = [];
-
-        querySnapshot.forEach((doc) => {                  /*LOO AT THIS CLOSER */
-          _messages.push({
-            id: doc.id,
-            ...doc.data(),
-          });
-        });
-
-        setmessages(_messages);
-      });
-  }, []);
-  
   return (<>
     <main>
 
@@ -172,5 +138,32 @@ function ChatRoom() {
     </form>
   </>)
 }
+
+
+function ChatMessage(props) {
+  const { text, uid, photoURL, lumens } = props.message;
+
+  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+  
+  return (<>
+    <div className={`message ${messageClass}`}>
+      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+
+      
+      <div className = "lumens">
+
+        <button onClick  className="lumens">
+        💡
+        </button>
+
+      </div>
+
+      <p>{lumens}</p>
+      <p>{text}</p>
+
+    </div>
+  </>)
+}
+
 
 export default App;
