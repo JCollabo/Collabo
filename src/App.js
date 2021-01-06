@@ -141,7 +141,7 @@ function ChatRoom() {
 }
 
 function giveLumen(p){
-  <input value={lumens} onChange={(p) => setLumenCounter(p.target.value)} placeholder=" 0 " />
+  <input value={lumenCounter} onChange={(p) => setLumenCounter(p.target.value)} placeholder=" 0 " />
 }
 
 function ChatMessage(props) {
