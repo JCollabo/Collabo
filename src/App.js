@@ -143,7 +143,7 @@ function ChatRoom() {
 function giveLumen(p){
   const db = firebase.firestore;
   const messages = db.collection('messages').doc(this)
-  messages.update({setLumenCounter: lumenCount +1})
+  messages.update({setLumenCounter: setLumenCounter +1})
 }
 
 function ChatMessage(props) {
