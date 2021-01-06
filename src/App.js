@@ -11,7 +11,6 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { Helmet } from 'react-helmet'
 
 import collaboC from './CollaboC.png'
-const db = firebase.firestore();
 
 
 firebase.initializeApp({
@@ -142,8 +141,9 @@ function ChatRoom() {
 }
 
 function giveLumen(p){
-
-  const lumenCount = db.collection('messages').doc.this;
+  const app = firebase.app();
+  const db = firebase.firestore();
+  const lumenCount = db.collection('messages').doc.lumens;
 
   lumenCount.set({
     lumens: 100
