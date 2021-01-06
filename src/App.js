@@ -101,7 +101,7 @@ function ChatRoom() {
 
   const [formValue, setFormValue] = useState('');
 
-  const [lumenCounter, setLumenCounter] = useState('');
+  const [lumenCount, setLumenCounter] = useState('');
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -113,7 +113,7 @@ function ChatRoom() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL,
-      lumens: lumenCounter
+      lumens: lumenCount
     })
 
     setLumenCounter('');                                                                                             /*setLumenCounter*/
@@ -141,7 +141,9 @@ function ChatRoom() {
 }
 
 function giveLumen(p){
-  <input value={lumenCounter} onChange={(p) => setLumenCounter(p.target.value)} placeholder=" 0 " />
+  const db = firebase.firestore;
+  const messages = db.collection('messages').doc(this)
+  messages.update({lumenCount: lumenCount +1})
 }
 
 function ChatMessage(props) {
