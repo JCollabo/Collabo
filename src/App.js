@@ -91,7 +91,6 @@ function SignOut() {
 }
 
 function ChatRoom() {
-
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
   const lumensRef = firestore.collection('lumens')
@@ -162,7 +161,7 @@ function ChatMessage(props) {
       
       <div className = "lumens">
 
-        <button onClick= {giveLumen} className="lumens">
+        <button onClick= {location = location} className="lumens">
         💡
         </button>
 
