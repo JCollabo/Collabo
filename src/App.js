@@ -91,7 +91,6 @@ function SignOut() {
 }
 
 function ChatRoom() {
-
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
   const lumensRef = firestore.collection('lumens')
@@ -140,9 +139,8 @@ function ChatRoom() {
   </>)
 }
 
+
 function ChatMessage(props) {
-  class App extends Component {
-    
   const { text, uid, photoURL, lumens } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
@@ -154,7 +152,7 @@ function ChatMessage(props) {
       
       <div className = "lumens">
 
-        <button onClick  className= "lumens">
+        <button onClick  className="lumens">
         💡
         </button>
 
@@ -166,7 +164,6 @@ function ChatMessage(props) {
     </div>
   </>)
 }
-
 
 
 export default App;
