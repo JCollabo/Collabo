@@ -91,6 +91,16 @@ function SignOut() {
 }
 
 function ChatRoom() {
+
+  addLumen = (postId, userId) => {
+    const {user} = this.props.auth;
+
+    if( postId.toString() === this.props.postId.toString() && userId.toString() === user.id.toString()){
+       return "letThereBeLight"
+    }
+     return this.state.btnColor
+  }
+
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
   const lumensRef = firestore.collection('lumens')
@@ -152,9 +162,10 @@ function ChatMessage(props) {
       
       <div className = "lumens">
 
-        <button onClick  className="lumens">
-        💡
-        </button>
+      <button
+          style={{ color: this.addLumen(this.props.postId, this.props.auth.user.id) }}
+          onClick={this.btnToggled}
+        >
 
       </div>
 
