@@ -162,10 +162,9 @@ function ChatMessage(props) {
       
       <div className = "lumens">
 
-      <button
-          style={{ color: this.addLumen(this.props.postId, this.props.auth.user.id) }}
-          onClick={this.btnToggled}
-        >
+        <button onClick= {this.btnToggled} className="lumens"> style={{ color: this.starCheck(this.props.postId, this.props.auth.user.id) }}
+        
+        </button>
 
       </div>
 
