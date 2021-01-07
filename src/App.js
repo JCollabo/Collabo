@@ -140,28 +140,12 @@ function ChatRoom() {
   </>)
 }
 
-
 function ChatMessage(props) {
   class App extends Component {
-
-    constructor(props) {
-      super(props);
-      this.state = {
-        bgColor: ""
-      }
-    }
-  
-  
-    boxClick = (e) => {
-      this.setState({
-        bgColor: "red"
-      })
-    }
-
+    
   const { text, uid, photoURL, lumens } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
-
   
   return (<>
     <div className={`message ${messageClass}`}>
@@ -170,8 +154,8 @@ function ChatMessage(props) {
       
       <div className = "lumens">
 
-        <button onClick= {this.boxClick} style={{backgroundColor: this.state.bgColor}}>
-          
+        <button onClick  className= "lumens">
+        💡
         </button>
 
       </div>
@@ -182,6 +166,7 @@ function ChatMessage(props) {
     </div>
   </>)
 }
+
 
 
 export default App;
