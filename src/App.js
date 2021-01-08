@@ -12,10 +12,10 @@ import { Helmet } from 'react-helmet'
 
 import collaboC from './CollaboC.png'
 
-import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
+import { BrowserRouter as Router }
 
 
-firebase.initializeApp({
+from firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
     authDomain: "collabo-chat.firebaseapp.com",
     databaseURL: "https://collabo-chat-default-rtdb.firebaseio.com",
@@ -55,13 +55,8 @@ function App() {
 
   const [user] = useAuthState(auth);
 
-  //Pages
-  import MainPage from "./pages";
-
-
-  return <Router>
-    <Route path="/" component={MainPage} />
-  </Router>
+  return (
+    <div className="App">
       <header>
         <h1>Collabo</h1>
         <SignOut />
