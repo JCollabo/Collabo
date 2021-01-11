@@ -12,6 +12,8 @@ import { Helmet } from 'react-helmet'
 
 import collaboC from './CollaboC.png'
 
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
+
 
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
@@ -53,8 +55,13 @@ function App() {
 
   const [user] = useAuthState(auth);
 
-  return (
-    <div className="App">
+  //Pages
+  import MainPage from "./pages";
+
+
+  return <Router>
+    <Route path="/" component={MainPage} />
+  </Router>
       <header>
         <h1>Collabo</h1>
         <SignOut />
