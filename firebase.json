@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "build",
+    "public": "deploy",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -13,11 +13,10 @@
       }
     ]
   },
-  
-    "functions": {
-      "predeploy": [
-        "npm --prefix ./functions/ run lint",
-        "npm --prefix ./functions/ run build"
-      ]
-    }
+  "functions": {
+    "predeploy": [
+      "npm --prefix functions run build"
+    ],
+    "source": "functions"
   }
+}
