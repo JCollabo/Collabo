@@ -55,13 +55,8 @@ function App() {
 
   const [user] = useAuthState(auth);
 
-  //Pages
-  import MainPage from "./pages";
-
-
-  return <Router>
-    <Route path="/" component={MainPage} />
-  </Router>
+  return (
+    <div className="App">
       <header>
         <h1>Collabo</h1>
         <SignOut />
