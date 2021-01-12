@@ -8,11 +8,10 @@ import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet'
 
-import collaboC from './CollaboC.png';
+import collaboC from './CollaboC.png'
 
-/*import { BrowserRouter as Router } */
 
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
@@ -23,12 +22,6 @@ firebase.initializeApp({
     messagingSenderId: "255596477659",
     appId: "1:255596477659:web:78b061c06377cceaf220fe",
     measurementId: "G-S17408XZXB"
-})
-
-document.addEventListener("DOMContentLoaded", event => {
-  const app = firebase.app();
-  const db = firebase.firestore();
-  const myLumens = db.collection('messages').doc('lumens')
 })
 
 const auth = firebase.auth();
