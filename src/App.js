@@ -24,12 +24,6 @@ firebase.initializeApp({
     measurementId: "G-S17408XZXB"
 })
 
-document.addEventListener("DOMContentLoaded", event => {
-  const app = firebase.app();
-  const db = firebase.firestore();
-  const myLumens = db.collection('messages').doc('lumens')
-})
-
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
