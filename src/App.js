@@ -10,11 +10,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { Helmet } from 'react-helmet';
 
-import collaboC from './CollaboC.png'
+import collaboC from './CollaboC.png';
 
 /*import { BrowserRouter as Router } */
 
-from firebase.initializeApp ({
+firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
     authDomain: "collabo-chat.firebaseapp.com",
     databaseURL: "https://collabo-chat-default-rtdb.firebaseio.com",
