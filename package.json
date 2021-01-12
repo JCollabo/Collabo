@@ -8,6 +8,11 @@
     "@testing-library/user-event": "^12.6.0",
     "create-react-app": "^4.0.1",
     "firebase": "^8.2.1",
+<<<<<<< HEAD
+=======
+    "firebase-admin": "^9.4.2",
+    "firebase-functions": "^3.13.0",
+>>>>>>> 0c38fd5ec5f9ed1a28f537f0ed69026b12ad12d4
     "lint": "^0.7.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -20,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint.js"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^7.17.0",
     "gh-pages": "^3.1.0",
     "typescript": "^4.1.3"
   }
