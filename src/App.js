@@ -10,7 +10,14 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 firebase.initializeApp({
-  // your config
+  apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
+  authDomain: "collabo-chat.firebaseapp.com",
+  databaseURL: "https://collabo-chat-default-rtdb.firebaseio.com",
+  projectId: "collabo-chat",
+  storageBucket: "collabo-chat.appspot.com",
+  messagingSenderId: "255596477659",
+  appId: "1:255596477659:web:a2d7cc19aacfef45f220fe",
+  measurementId: "G-11Y85DFBQ2"
 })
 
 const auth = firebase.auth();

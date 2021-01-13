@@ -1,21 +1,21 @@
 body {
-  background-color: #282c34;
+  background-color: #ADEFD1FF;
 }
 
 .App {
   text-align: center;
-  max-width: 728px;
+  max-width: 2500px;
   margin: 0 auto;
 }
 
 .App header {
-  background-color: #181717;
+  background-color: #00203FFF;    /*top of the screen*/
   height: 10vh;
   min-height: 50px;
   color: white;
   position: fixed;
   width: 100%;
-  max-width: 728px;
+  max-width: 2500px;
   top: 0;
   display: flex;
   align-items: center;
@@ -23,6 +23,7 @@ body {
   z-index: 99;
   padding: 10px;
   box-sizing: border-box;
+  font-style: italic
 }
 
 .App section {
@@ -30,12 +31,12 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(40, 37, 53);
+  background-color: rgb(255, 255, 255);
 }
 
 main {
   padding: 10px;
-  height: 80vh;
+  height: 80vh;                   /*this value here will compress chat part of screen to half but centered*/
   margin: 10vh 0 10vh;
   overflow-y: scroll;
   display: flex;
@@ -43,39 +44,39 @@ main {
 }
 
 main::-webkit-scrollbar {
-  width: 0.25rem;
+  width: 0.5rem;
 }
 
 main::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: #ADEFD1FF;
 }
 
 main::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  background: #00203FFF; 
 }
 
-form {
+form {                    /*send button*/
   height: 10vh;
   position: fixed;
   bottom: 0;
-  background-color: rgb(24, 23, 23);
+  background-color: #ADEFD1FF;
   width: 100%;
-  max-width: 728px;
+  max-width: 2500px;
   display: flex;
-  font-size: 1.5rem;
+  font-size: 15rem;
 }
 
 form button {
   width: 20%;
-  background-color: rgb(56, 56, 143);
+  background-color: #ADEFD1FF ;      /*C send button*/
 }
 
 
-input {
-  line-height: 1.5;
+input {                 /*input chat box*/
+  line-height: 1;
   width: 100%;
   font-size: 1.5rem;
-  background: rgb(58, 58, 58);
+  background:#00203FFF;
   color: white;
   outline: none;
   border: none;
@@ -83,10 +84,10 @@ input {
 }
 
 button {
-  background-color: #282c34; /* Green */
+  background-color: #ADEFD1FF;            /* sign out */
   border: none;
-  color: white;
-  padding: 15px 32px;
+  color: black;
+  padding: 15px 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -94,36 +95,38 @@ button {
   font-size: 1.25rem;
 }
 
-button:disabled {
+button:disabled {                 /*when no text in box*/
   opacity: 0.5;
   cursor: not-allowed;
 }
 
 
 .sign-in {
-  color: #282c34;
-  background: white;
+  color: white;         /*the sign in*/
+  background: #00203FFF;
   max-width: 400px;
   margin: 0 auto;
 }
 
-
+.lumens {
+  background:white
+}
 
 
 ul, li {
-  text-align: left;
+  text-align: center;
   list-style: none;
 }
 
 p {
-  max-width: 500px;
-  margin-bottom: 12px;
-  line-height: 24px;
-  padding: 10px 20px;
-  border-radius: 25px;
+  max-width: 2500px;               
+  margin-bottom: 8px;
+  line-height: 20px;
+  padding: 5px 10px;
+  border-radius: 0px;
   position: relative;
-  color: white;
-  text-align: center;
+  color: black; 
+ 
 }
 
 .message {
@@ -137,19 +140,18 @@ p {
 }
 
 .sent p {
-  color: white;
-  background: #0b93f6;
+  color: black;               /*send and received texts*/
   align-self: flex-end;
+  text-align: right;
 }
 .received p {
-  background: #e5e5ea;
   color: black;
+  text-align: left;
 }
 
 img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin: 2px 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  margin: 0px 0px;
 }
-
