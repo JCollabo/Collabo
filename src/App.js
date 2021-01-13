@@ -8,42 +8,15 @@ import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { Helmet } from 'react-helmet';
 
-import collaboC from './CollaboC.png';
-
-/*import { BrowserRouter as Router } */
-
-
-from firebase.initializeApp ({  
-  apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
-    authDomain: "collabo-chat.firebaseapp.com",
-    databaseURL: "https://collabo-chat-default-rtdb.firebaseio.com",
-    projectId: "collabo-chat",
-    storageBucket: "collabo-chat.appspot.com",
-    messagingSenderId: "255596477659",
-    appId: "1:255596477659:web:78b061c06377cceaf220fe",
-    measurementId: "G-S17408XZXB"
+firebase.initializeApp({
+  // your config
 })
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
-const TITLE = 'My Page Title'
-
-class MyComponent extends React.PureComponent {
-  render () {
-    return (
-      <>                                
-        <Helmet>
-          <title>{ "-Collabo1-" }</title>
-        </Helmet>
-        ...
-      </>
-    )
-  }
-}
 
 function App() {
 
@@ -52,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Collabo</h1>
+        <h1>⚛️🔥💬</h1>
         <SignOut />
       </header>
 
@@ -74,7 +47,7 @@ function SignIn() {
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Built for busy people.</p>
+      <p>Do not violate the community guidelines or you will be banned for life!</p>
     </>
   )
 
@@ -86,17 +59,16 @@ function SignOut() {
   )
 }
 
+
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
-  const lumensRef = firestore.collection('lumens')
-  const query = messagesRef.orderBy('createdAt').limit(2000);
+  const query = messagesRef.orderBy('createdAt').limit(25);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
 
-  const [lumenCounter, setLumenCounter] = useState('');
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -107,11 +79,9 @@ function ChatRoom() {
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
-      photoURL,
-      lumens: lumenCounter
+      photoURL
     })
 
-    setLumenCounter(0);                                                                                             /*setLumenCounter*/
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
@@ -127,9 +97,9 @@ function ChatRoom() {
 
     <form onSubmit={sendMessage}>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder=" Be helpful " />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
 
-      <button type="submit" disabled={!formValue}> <img src={collaboC} alt="Collabo"/> </button>
+      <button type="submit" disabled={!formValue}>🕊️</button>
 
     </form>
   </>)
@@ -137,26 +107,14 @@ function ChatRoom() {
 
 
 function ChatMessage(props) {
-  const { text, uid, photoURL, lumens } = props.message;
+  const { text, uid, photoURL } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
-  
+
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-
-      
-      <div className = "lumens">
-
-        <button onClick  className="lumens">
-        💡
-        </button>
-
-      </div>
-
-      <p>{lumens}</p>
       <p>{text}</p>
-
     </div>
   </>)
 }
