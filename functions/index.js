@@ -5,7 +5,7 @@ admin.initializeApp();
 
 const db = admin.firestore();
 
-exports.detectEvilUsers = functions.firestore
+/*exports.detectEvilUsers = functions.firestore
        .document('messages/{msgId}')
        .onCreate(async (doc, ctx) => {
 
@@ -31,4 +31,4 @@ exports.detectEvilUsers = functions.firestore
             await userRef.set({ msgCount: (userData.msgCount || 0) + 1 })
         }
 
-});
+});*/
