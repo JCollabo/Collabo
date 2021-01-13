@@ -15,7 +15,7 @@ import collaboC from './CollaboC.png';
 /*import { BrowserRouter as Router } */
 
 
-from = firebase.initializeApp ({  
+from firebase.initializeApp ({  
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
     authDomain: "collabo-chat.firebaseapp.com",
     databaseURL: "https://collabo-chat-default-rtdb.firebaseio.com",
