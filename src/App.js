@@ -93,7 +93,7 @@ function ChatRoom() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL,
-      lumens
+      lumens: 0
     })
 
     setFormValue('');
