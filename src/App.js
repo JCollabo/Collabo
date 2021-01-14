@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Collabo</h1>
+        <h1>Collabo+</h1>
         <SignOut />
       </header>
 
@@ -119,6 +119,22 @@ function ChatRoom() {
 
 
 function ChatMessage(props) {
+
+  class LumenButton extends React.Component {
+    state = {
+      lumens = 0
+    };
+    render(){
+      return <button> Lumens: {this.state.lumens} </button>
+    }
+  }
+  addLumen = () => {
+    let newCount = this.state.lumens + 1;
+      this.setState({
+      lumens: newCount
+      });
+  };
+
   const { text, uid, photoURL, lumens } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
@@ -128,6 +144,7 @@ function ChatMessage(props) {
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
       <p>{text}</p>
       <p>{lumens}</p>
+      <button> onClick = {addLumen} Lumen </button>
     </div>
   </>)
 }
