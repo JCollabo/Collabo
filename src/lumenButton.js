@@ -5,7 +5,7 @@ class LumenButton extends React.Component {
       lumens: 0
     };
     render(){
-      return <button> Lumens: {this.state.lumens} </button>
+      return <button> Lumens: {this.state.lumens} onClick = {addLumen} </button>
     }
   }
   addLumen = () => {
