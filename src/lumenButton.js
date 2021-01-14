@@ -1,12 +1,5 @@
 import React from 'react';
 
-addLumen = () => {
-    let newCount = this.state.lumens + 1;
-      this.setState({
-      lumens: newCount
-      });
-  };
-
 class LumenButton extends React.Component {
     state = {
       lumens: 0
@@ -15,6 +8,13 @@ class LumenButton extends React.Component {
       return <button> Lumens: {this.state.lumens} onClick = {addLumen} </button>
     }
   }
+
+  addLumen = () => {
+    let newCount = this.state.lumens + 1;
+      this.setState({
+      lumens: newCount
+      });
+  };
 
 
   export default LumenButton;
