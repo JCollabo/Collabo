@@ -9,12 +9,12 @@ class LumenButton extends React.Component {
     }
   }
 
-  addLumen = () => {
+  /*addLumen = () => {
     let newCount = this.state.lumens + 1;
       this.setState({
       lumens: newCount
       });
-  };
+  };*/
 
 
   export default LumenButton;
