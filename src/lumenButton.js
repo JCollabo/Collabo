@@ -5,16 +5,16 @@ class LumenButton extends React.Component {
       lumens: 0
     };
     render(){
-      return <button> Lumens: {this.state.lumens} onClick = {addLumen} </button>
+      return <button> Lumens: {this.state.lumens} </button>
     }
   }
 
-  addLumen = () => {
+  /*addLumen = () => {
     let lumenValue = this.state.lumens + 1;
       this.setState({
       lumens: lumenValue
       });
-  };
+  };*/
 
 
   export default LumenButton;
