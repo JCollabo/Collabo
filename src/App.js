@@ -9,6 +9,8 @@ import 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
+import LumenButton from './LumenButton';
+
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
   authDomain: "collabo-chat.firebaseapp.com",
@@ -68,7 +70,7 @@ function SignOut() {
 
 
 function LumenRoom(){
-
+/*where we make important shit first*/
 }
 
 function ChatRoom() {

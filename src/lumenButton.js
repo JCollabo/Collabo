@@ -1,3 +1,5 @@
+import React from 'react';
+
 class LumenButton extends React.Component {
     state = {
       lumens: 0
@@ -12,3 +14,5 @@ class LumenButton extends React.Component {
       lumens: newCount
       });
   };
+
+  export default LumenButton;
