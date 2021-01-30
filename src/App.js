@@ -1,5 +1,4 @@
-//MAKE COMMENT AT TOP TO SEE IF WORKS//
-
+//MAKE Amends AT TOP TO SEE IF WORKS//
 
 import React, { useRef, useState } from 'react';
 import './App.css';
@@ -37,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Collabo+</h1>
+        <h1>Collabo</h1>
         <SignOut />
       </header>
 
@@ -115,13 +114,14 @@ function ChatRoom() {
 
     <form onSubmit={sendMessage}>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="be helpful" />
 
       <button type="submit" disabled={!formValue}>C</button>
 
     </form>
   </>)
 }
+https://reactjs.org/docs/handling-events.html
 
 
 function ChatMessage(props) {
