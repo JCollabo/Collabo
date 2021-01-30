@@ -121,8 +121,6 @@ function ChatRoom() {
     </form>
   </>)
 }
-https://reactjs.org/docs/handling-events.html
-
 
 function ChatMessage(props) {
 
