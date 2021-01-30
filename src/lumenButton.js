@@ -2,7 +2,7 @@ import React from 'react';
 
 class LumenButton extends React.Component {
     state = {
-      lumens: 0
+      lumens: 5
     };
     render(){
       return <button> Lumens: {this.state.lumens} </button>
