@@ -1,10 +1,6 @@
 import React from 'react';
 
-<button >
-  Lightbulb
-</button>
-
-/*class LumenButton extends React.Component {
+class LumenButton extends React.Component {
     state = {
       lumens: 0
     };
@@ -13,7 +9,7 @@ import React from 'react';
     }
   }
 
-  addLumen = () => {
+  /*addLumen = () => {
     let lumenValue = this.state.lumens + 1;
       this.setState({
       lumens: lumenValue
