@@ -11,7 +11,7 @@ import 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-import LumenButton from './lumenButton';
+import lumenButton from './lumenButton';
 
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
@@ -131,7 +131,7 @@ function ChatMessage(props) {
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
       <p>{text}</p>
-      <p>{LumenButton}</p>
+      <p>{lumenButton}</p>
     </div>
   </>)
 }
