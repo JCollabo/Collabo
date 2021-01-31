@@ -81,6 +81,7 @@ function ChatRoom() {
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
+  const [lumenValue, setLumenValue] = useState('');
 
 
   const sendMessage = async (e) => {
@@ -92,10 +93,11 @@ function ChatRoom() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL,
-      lumens: 0
+      lumenValue: 0
     })
 
     setFormValue('');
+    setLumenValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -119,15 +121,15 @@ function ChatRoom() {
 }
 
 function ChatMessage(props) {
-  const { text, uid, photoURL, lumens } = props.message;
+  const { text, uid, photoURL, lumenValue } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-      <button> 💡 onClick={this.setState({lumens: 1})} </button>
-      <p>{lumens}</p>
+      <button> 💡 onClick={this.setState({lumenValue: 1})} </button>
+      <p>{lumenValue}</p>
       <p>{text}</p>
     </div>
   </>)
