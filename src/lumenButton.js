@@ -23,4 +23,4 @@ import React from 'react';
     };*/
 
 
-  export default LumenButton;
+  export default lumenButton;
