@@ -1,6 +1,10 @@
 import React from 'react';
 
-class LumenButton extends React.Component {
+<button> 💡 </button>
+
+/* class LumenButton extends React.Component {
+    
+
   state = {
       lumens: 0
     };
@@ -8,8 +12,8 @@ class LumenButton extends React.Component {
   render() {
       
         return <button> 💡 {this.state.lumens} </button>
-    }
-  }
+    } 
+  }*/
   
   /*addLumen = () => {
       let newCount = this.state.lumens + 1;
