@@ -1,6 +1,6 @@
 import React from 'react';
 
-<button> 💡 </button>
+
 
 /* class LumenButton extends React.Component {
     

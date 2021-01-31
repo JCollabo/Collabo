@@ -11,8 +11,6 @@ import 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-import lumenButton from './lumenButton';
-
 firebase.initializeApp({
   apiKey: "AIzaSyCt0AapeDmduiTedkzN7DFrkKWL6yUTBdg",
   authDomain: "collabo-chat.firebaseapp.com",
@@ -123,6 +121,10 @@ function ChatRoom() {
 
 function ChatMessage(props) {
 
+  state = {
+    lumens: 0
+  };
+
   const { text, uid, photoURL, lumens } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
@@ -130,8 +132,8 @@ function ChatMessage(props) {
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+      <button> 💡 onClick={ lumens = 10} </button>
       <p>{text}</p>
-      <p>{lumenButton}</p>
     </div>
   </>)
 }
