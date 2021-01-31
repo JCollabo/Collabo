@@ -81,7 +81,6 @@ function ChatRoom() {
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
-  var [lumenValue, setLumenValue] = useState('');
 
 
   const sendMessage = async (e) => {
@@ -93,7 +92,7 @@ function ChatRoom() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL,
-      lumens: lumenValue
+      lumens: 0
     })
 
     setFormValue('');
