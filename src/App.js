@@ -120,6 +120,21 @@ function ChatRoom() {
   </>)
 }
 
+class Counter extends Component {
+  state = {
+    count: 0
+  };
+  handleClick = () => {
+    this.setState(({ count }) => ({
+      count: count + 1
+    }));
+  };
+  render() {
+    return <button onClick={this.handleClick}>{this.state.count}</button>;
+  }
+}
+
+
 function ChatMessage(props) {
   const { text, uid, photoURL, lumenValue } = props.message;
 
@@ -128,7 +143,7 @@ function ChatMessage(props) {
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-      <button> 💡 onClick={this.setState({lumenValue: 1})} </button>
+      <button> 💡 </button>
       <p>{lumenValue}</p>
       <p>{text}</p>
     </div>
