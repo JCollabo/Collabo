@@ -81,7 +81,7 @@ function ChatRoom() {
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
-  const [lumenValue, setLumenValue] = useState('');
+  var [lumenValue, setLumenValue] = useState('');
 
 
   const sendMessage = async (e) => {
@@ -120,7 +120,6 @@ function ChatRoom() {
 }
 
 function ChatMessage(props) {
-  
   const { text, uid, photoURL, lumens } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
