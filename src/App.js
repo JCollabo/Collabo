@@ -81,7 +81,7 @@ function ChatRoom() {
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
-  const [lumenValue, setLumenValue] = useState('');
+  
 
 
   const sendMessage = async (e) => {
@@ -120,39 +120,22 @@ function ChatRoom() {
   </>)
 }
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Counter />
-      </div>
-    );
-  }
-}
-
-class Counter extends Component {
-  state = {
-    count: 0
-  };
-  render() {
-    return <button onClick={alert('Click me...')}>{this.state.count}</button>;
-  }
-}
-
-
 function ChatMessage(props) {
   const { text, uid, photoURL, lumenValue } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
+  const [lumenValue, setLumenValue] = useState('');
+
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-      <button> 💡 </button>
-      <p>{lumenValue}</p>
+      <button> 💡 onClick={() => setLumenValue(lumenValue + 1)} </button>
       <p>{text}</p>
     </div>
   </>)
 }
 
 export default App;
+
+
