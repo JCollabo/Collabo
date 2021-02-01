@@ -93,11 +93,9 @@ function ChatRoom() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL,
-      lumenValue: 0
     })
 
     setFormValue('');
-    setLumenValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -121,7 +119,7 @@ function ChatRoom() {
 }
 
 function ChatMessage(props) {
-  const { text, uid, photoURL, lumenValue } = props.message;
+  const { text, uid, photoURL } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
