@@ -128,7 +128,8 @@ function ChatMessage(props) {
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-      <button onClick={() => setLumenValue(lumenValue + 1)}> CLICK </button>
+      <button onClick={() => setLumenValue(lumenValue + 1)}> L </button>
+      <p>{lumenValue}</p>
       <p>{text}</p>
     </div>
   </>)
