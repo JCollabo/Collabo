@@ -81,8 +81,6 @@ function ChatRoom() {
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
-  
-
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -128,7 +126,7 @@ function ChatMessage(props) {
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-      <button onClick={() => setLumenValue(lumenValue + 1)}> L </button>
+      <button onClick={() => setLumenValue(lumenValue + 1)}> 💡 </button>
       <p>{lumenValue}</p>
       <p>{text}</p>
     </div>
