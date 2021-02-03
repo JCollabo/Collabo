@@ -84,7 +84,7 @@ input {                 /*input chat box*/
 }
 
 button {
-  background-color: #ADEFD1FF;            /* sign out */
+  background-color: rgb(255, 255, 255);            /* sign out */
   border: none;
   color: black;
   padding: 15px 5px;
