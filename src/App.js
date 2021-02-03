@@ -1,5 +1,3 @@
-//MAKE Amends AT TOP TO SEE IF WORKS//
-
 import React, { useRef, useState } from 'react';
 import './App.css';
 
@@ -81,6 +79,8 @@ function ChatRoom() {
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
+  const [lumenValue, setLumenValue] = useState('');
+
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -88,9 +88,10 @@ function ChatRoom() {
     const { uid, photoURL } = auth.currentUser;
 
     await messagesRef.add({
+      text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
-      photoURL
+      photoURL,
     })
 
     setFormValue('');
@@ -117,6 +118,7 @@ function ChatRoom() {
 }
 
 function ChatMessage(props) {
+
   const { text, uid, photoURL } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
@@ -126,9 +128,9 @@ function ChatMessage(props) {
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-      <p>{text}</p>
-      <button onClick={() => setLumenValue(lumenValue + 1 )}> 💡 </button>
       <p>{lumenValue}</p>
+      <button onClick={() => setLumenValue(lumenValue + 1)}> 💡 </button>
+      <p>{text}</p>
     </div>
   </>)
 }
