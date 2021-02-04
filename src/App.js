@@ -79,8 +79,8 @@ function ChatRoom() {
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
-  const [lumenValue, setLumenValue] = useState('');
 
+ /*I NEED TO DEFINE LUMENS SO THAT IT SHOWS UP IN THE FIREBASE */
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -92,6 +92,7 @@ function ChatRoom() {
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
       photoURL,
+      lumens: 0,
     })
 
     setFormValue('');
@@ -118,18 +119,21 @@ function ChatRoom() {
 }
 
 function ChatMessage(props) {
-
-  const { text, uid, photoURL } = props.message;
-
-  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+  const dummy = useRef();
+  const messagesRef = firestore.collection('messages');
 
   const [lumenValue, setLumenValue] = useState(0);
+  
+  const { text, uid, photoURL, lumens } = props.message;
+
+  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (<>
     <div className={`message ${messageClass}`}>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
       <p>{lumenValue}</p>
-      <button onClick={() => setLumenValue(lumenValue + 1)}> 💡 </button>
+      <p>{lumens}</p>
+      <button onClick={() => setLumenValue(lumenValue + 1), messagesRef.update({lumens: lumenValue})}> 💡 </button>
       <p>{text}</p>
     </div>
   </>)
