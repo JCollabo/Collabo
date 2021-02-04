@@ -133,10 +133,12 @@ function ChatMessage(props) {
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
       <p>{lumenValue}</p>
       <p>{lumens}</p>
-      <button onClick={() => setLumenValue(lumenValue + 1), messagesRef.this.update({lumens: lumenValue})}> 💡 </button>
+      <button onClick={() => setLumenValue(lumenValue + 1)}> 💡 </button>
       <p>{text}</p>
     </div>
   </>)
 }
 
 export default App;
+
+/*, messagesRef.this.update({lumens: lumenValue})*/
